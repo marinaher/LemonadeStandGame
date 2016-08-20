@@ -1,0 +1,5 @@
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandGame\bin\Debug\LemonadeStandGame.exe.config
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandGame\bin\Debug\LemonadeStandGame.exe
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandGame\bin\Debug\LemonadeStandGame.pdb
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandGame\obj\Debug\LemonadeStandGame.exe
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandGame\obj\Debug\LemonadeStandGame.pdb
