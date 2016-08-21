@@ -25,7 +25,7 @@ namespace LemonadeStandGame
         {
             this.name = name;
         }
-        public void BuyLemons()
+        public void BuyLemons()                 //what if player enters in string instead of int ??? it doesn't break. it tells player that they bought 0 items.
         {
             int buyLemonAmount;
             double costOfLemon = 0.60;
@@ -53,7 +53,7 @@ namespace LemonadeStandGame
         public void BuySugar()
         {
             int buySugarAmount;
-            double costOfSugar = 0.80;
+            double costOfSugar = 0.40;
             Console.WriteLine("\nHow many cups of sugar would you like to buy?");
             string sugarAmountInput = Console.ReadLine();
             int.TryParse(sugarAmountInput, out buySugarAmount);
@@ -78,7 +78,7 @@ namespace LemonadeStandGame
         public void BuyIce()
         {
             int buyIceAmount;
-            double costOfIce = 0.60;
+            double costOfIce = 0.40;
             Console.WriteLine("\nHow many cups of ice would you like to buy?");
             string iceAmountInput = Console.ReadLine();
             int.TryParse(iceAmountInput, out buyIceAmount);
@@ -102,7 +102,7 @@ namespace LemonadeStandGame
         }
         public void BuyCups()
         {
-            double costOfCups = 1.00;
+            double costOfCups = 0.80;
             int buyCupsAmount;
             Console.WriteLine("\nHow many cups would you like to buy?");
             string cupsAmountInput = Console.ReadLine();

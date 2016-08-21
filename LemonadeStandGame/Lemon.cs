@@ -8,16 +8,17 @@ namespace LemonadeStandGame
 {
     public class Lemon
     {
-        public int spoilRate;
-        public int quality;
+        //public int spoilRate;
+        //public int quality;
         public int numberOfLemons;
         public double lemonPrice;
 
         public Lemon()
         {
-            this.quality = 100;
-            this.numberOfLemons = 0;
-            this.spoilRate = quality -= 10;
+            //this.quality = 100;
+            numberOfLemons = 0;
+            lemonPrice = 0.60;
+            //this.spoilRate = quality -= 10;
         }
     }
 }

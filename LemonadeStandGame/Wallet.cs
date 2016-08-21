@@ -13,7 +13,7 @@ namespace LemonadeStandGame
 
         public Wallet()
         {
-            this.amountOfMoney = 20;
+            this.amountOfMoney = 30;
         }
         public double GetAmountOfMoney()
         {

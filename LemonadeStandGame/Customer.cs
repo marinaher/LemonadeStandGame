@@ -10,7 +10,8 @@ namespace LemonadeStandGame
     public class Customer
     {
         public List<Customer> CustomerList = new List<Customer>();
-        Inventory inventory;
+        public Weather weather;
+        Day day = new Day();
         public int thirst;
         public double customerCash;
         public int pitcher = 8;
@@ -29,50 +30,53 @@ namespace LemonadeStandGame
             {
                 Customer customer = new Customer();
 
-                customer.thirst = getThirst();
-                customer.customerCash = getCustomerCash();
+                customer.thirst = GetThirst();
+                customer.customerCash = GetCustomerCash();
 
                 CustomerList.Add(customer);
             }
             return CustomerList;
         }
 
-        public int getThirst()
+        public int GetThirst()
         {
             int thirstiness = 0;
             thirstiness = random.Next(0, 4);
             return thirstiness;
         }
-        public double getCustomerCash()
+        public double GetCustomerCash()
         {
-            int cash = 0;
+            double cash = 0;
             cash = random.Next(1, 15);
             return cash * .10;
         }
-        public void CustomerTransactions(Wallet wallet, Inventory inventory)
+        public void CustomerTransactions(Wallet wallet, Inventory inventory, double lemonadePrice)
         {
             int customerCapabilityToBuy = 0;
+            double Price = day.StartDay();
 
             foreach (Customer customer in CustomerList)
             {
-                if (customer.customerCash >= 0.50 && customer.thirst > 1)
+                if (customer.customerCash >= Price && customer.thirst > 1)
                 {
                     customerCapabilityToBuy++;
                 }
             }
+
             if (customerCapabilityToBuy == 0)
             {
-                // Game ends. 
+                // Day ends. 
             }else if (customerCapabilityToBuy != 0)
             {
-                while(customerCapabilityToBuy > pitcher)
+                while(customerCapabilityToBuy >= pitcher)
                 {
-                    wallet.amountOfMoney += (0.50 * 8);
+                    wallet.amountOfMoney += (Price * 8);
                     customerCapabilityToBuy -= 8;
                     inventory.UpdateInventory();
                 }
-                wallet.amountOfMoney += (0.50 * customerCapabilityToBuy);
+                wallet.amountOfMoney += (Price * customerCapabilityToBuy);
             }
+            day.StartDay();
         }
     }
 }

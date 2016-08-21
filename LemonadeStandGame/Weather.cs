@@ -8,6 +8,8 @@ namespace LemonadeStandGame
 {
     public class Weather                        //temperature degrees do not match weather conditions!!!!
     {
+        Customer customer;
+
         public int currentTemperature;
         public int currentWeatherCondition;
         public string weatherCondition;
@@ -38,7 +40,6 @@ namespace LemonadeStandGame
             Random randomTemperature = new Random();
             int currentTemperature = randomTemperature.Next(80, 85);
             this.currentTemperature = TemperatureChange(currentTemperature);
-            //return currentTemperature;
         }
         public int TemperatureChange(int currentTemperature)
         {
@@ -56,6 +57,22 @@ namespace LemonadeStandGame
             {
                 currentTemperature = currentTemperature -= 5;
                 return currentTemperature;
+            }
+        }
+        public void WeatherEffectsOnCustomer(Day day)
+        {
+            if (weatherCondition == "HOT")
+            {
+                customer.customerCash += 0.50;
+                customer.thirst += 1;
+            }
+            else if (weatherCondition == "RAIN")
+            {
+                customer.thirst /= 2;
+            }
+            else
+            {
+                customer.customerCash -= 0.40;
             }
         }
     }

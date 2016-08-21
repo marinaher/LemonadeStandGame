@@ -11,11 +11,24 @@ namespace LemonadeStandGame
         public static void Main(string[] args)
         {
             Game game = new Game();
-            var x = game.StartGame();
             Wallet wallet = new Wallet();
-            Customer a = new Customer();
-            a.CreateCustomer();
-            a.CustomerTransactions(wallet, x);
+            Customer customer = new Customer();
+            Day day = new Day();
+
+
+            Inventory inventory = game.StartGame();
+            double lemonadePrice = day.StartDay();
+
+            customer.CreateCustomer();
+            customer.CustomerTransactions(wallet, inventory, lemonadePrice);
+
+
+
+
+
+
+
+
             Console.ReadKey();
         }
     }

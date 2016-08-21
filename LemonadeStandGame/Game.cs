@@ -10,6 +10,7 @@ namespace LemonadeStandGame
     {
         Player player;
         Day day = new Day();
+        Recipe recipe = new Recipe();
 
         public Game()
         {
@@ -30,16 +31,24 @@ namespace LemonadeStandGame
         public Inventory StartGame()
         {
             day.PrintDayWeather();          //WEATHER AFFECT CUSTOMERS
-            Console.ReadLine();
 
             player.inventory.PrintCurrentInventory();
 
             Console.WriteLine("\nYour available funds are: ${0}.", player.wallet.GetAmountOfMoney());
+            Console.WriteLine("\nPress Enter to continue...");
+            Console.ReadLine();
+            Console.Clear();
+
+            recipe.RecipeInfo();
+
             Console.WriteLine("\nLet's purchase some ingredients for your Lemonade.");
             Console.WriteLine("\nPress Enter to continue...");
             Console.ReadLine();
-
+            Console.Clear();
+            
             return player.GoBuyMaterials();
+
+            //make lemonade 
         }
     }
 }
