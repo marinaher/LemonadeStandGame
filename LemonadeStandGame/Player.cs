@@ -25,96 +25,114 @@ namespace LemonadeStandGame
         {
             this.name = name;
         }
-        public void GoBuyMaterials()
+        public void BuyLemons()
         {
-            double costOfLemon = 0.60;
-            double costOfSugar = 0.80;
-            double costOfIce = 0.60;
-            double costOfCups = 1.00;
             int buyLemonAmount;
-            int buySugarAmount;
-            int buyIceAmount;
-            int buyCupsAmount;
-
+            double costOfLemon = 0.60;
             Console.WriteLine("How many Lemons would you like to buy?");
-            buyLemonAmount = Convert.ToInt32(Console.ReadLine());
-            //int.TryParse(Console.ReadLine(), out buyLemonAmount);
-            for (int i = 0; i < buyLemonAmount; i++)
-            {
-                Lemon lemon = new Lemon();
-                inventory.inventoryLemons.Add(lemon);
-            }
+            string lemonAmountInput = Console.ReadLine();
+            int.TryParse(lemonAmountInput, out buyLemonAmount);
             if (wallet.amountOfMoney - (costOfLemon * buyLemonAmount) > 0.60)
             {
-                inventory.inventoryLemonCount = inventory.inventoryLemonCount + buyLemonAmount;
+                inventory.inventoryLemonCount += buyLemonAmount;
                 wallet.amountOfMoney = (wallet.amountOfMoney - (costOfLemon * buyLemonAmount));
+                Console.WriteLine("You bought {0} Lemons.", buyLemonAmount);
             }
-            else
+            else if(wallet.amountOfMoney < (costOfLemon * buyLemonAmount))
             {
                 Console.WriteLine("Insufficient Funds");
                 Console.ReadLine();
+                BuyLemons();
             }
-            Console.WriteLine("You bought {0} Lemons.", buyLemonAmount);
-            Console.ReadLine();
-            
-            Console.WriteLine("How many cups of sugar would you like to buy?");
-            int.TryParse(Console.ReadLine(), out buySugarAmount);
+            for (int i = 0; i < buyLemonAmount; i++)
+            {
+                Lemon lemon = new Lemon();
+                inventory.inventoryLemon.Add(lemon);
+            }
+        }
+        public void BuySugar()
+        {
+            int buySugarAmount;
+            double costOfSugar = 0.80;
+            Console.WriteLine("\nHow many cups of sugar would you like to buy?");
+            string sugarAmountInput = Console.ReadLine();
+            int.TryParse(sugarAmountInput, out buySugarAmount);
+            if (wallet.amountOfMoney - (costOfSugar * buySugarAmount) > 0.80)
+            {
+                inventory.inventorySugarCount += buySugarAmount;
+                wallet.amountOfMoney = wallet.amountOfMoney - (costOfSugar * buySugarAmount);
+                Console.WriteLine("You bought {0} cups of Sugar.", buySugarAmount);
+            }
+            else if(wallet.amountOfMoney < (costOfSugar * buySugarAmount))
+            {
+                Console.WriteLine("Insufficient Funds");
+                Console.ReadLine();
+                BuySugar();
+            }
             for (int k = 0; k < buySugarAmount; k++)
             {
                 Sugar sugar = new Sugar();
                 inventory.inventorySugar.Add(sugar);
             }
-            if (wallet.amountOfMoney - (costOfSugar * buySugarAmount) > 0.80)
+        }
+        public void BuyIce()
+        {
+            int buyIceAmount;
+            double costOfIce = 0.60;
+            Console.WriteLine("\nHow many cups of ice would you like to buy?");
+            string iceAmountInput = Console.ReadLine();
+            int.TryParse(iceAmountInput, out buyIceAmount);
+            if (wallet.amountOfMoney - (costOfIce * buyIceAmount) > 0.40)
             {
-                inventory.inventorySugarCount = inventory.inventorySugarCount + buySugarAmount;
-                wallet.amountOfMoney = wallet.amountOfMoney - (costOfSugar * buySugarAmount);
+                inventory.inventoryIceCount += buyIceAmount;
+                wallet.amountOfMoney = wallet.amountOfMoney - (costOfIce * buyIceAmount);
+                Console.WriteLine("You bought {0} cups of ice.", buyIceAmount);
             }
-            else
+            else if(wallet.amountOfMoney < (costOfIce * buyIceAmount))
             {
                 Console.WriteLine("Insufficient Funds");
                 Console.ReadLine();
+                BuyIce();
             }
-            Console.WriteLine("You bought {0} cups of Sugar.", buySugarAmount);
-            Console.ReadLine();
-
-            Console.WriteLine("How many pounds of ice would you like to buy?");
-            int.TryParse(Console.ReadLine(), out buyIceAmount);
             for (int j = 0; j < buyIceAmount; j++)
             {
                 Ice ice = new Ice();
                 inventory.inventoryIce.Add(ice);
             }
-            if (wallet.amountOfMoney - (costOfIce * buyIceAmount) > 0.40)
+        }
+        public void BuyCups()
+        {
+            double costOfCups = 1.00;
+            int buyCupsAmount;
+            Console.WriteLine("\nHow many cups would you like to buy?");
+            string cupsAmountInput = Console.ReadLine();
+            int.TryParse(cupsAmountInput, out buyCupsAmount);
+            if (wallet.amountOfMoney - (costOfCups * buyCupsAmount) > 1.00)
             {
-                inventory.inventoryIceCount = inventory.inventoryIceCount + buyIceAmount;
-                wallet.amountOfMoney = wallet.amountOfMoney - (costOfIce * buyIceAmount);
+                inventory.inventoryCupsCount += buyCupsAmount;
+                wallet.amountOfMoney = wallet.amountOfMoney - (costOfCups * buyCupsAmount);
+                Console.WriteLine("You bought {0} cups.", buyCupsAmount);
             }
-            else
+            else if(wallet.amountOfMoney < (costOfCups * buyCupsAmount))
             {
                 Console.WriteLine("Insufficient Funds");
                 Console.ReadLine();
+                BuyCups();
             }
-            Console.WriteLine("You bought {0} cups of ice.",buyIceAmount);
-            Console.ReadLine();
-
-            Console.WriteLine("How many cups would you like to buy?");
-            int.TryParse(Console.ReadLine(), out buyCupsAmount);
             for (int l = 0; l < buyCupsAmount; l++)
             {
                 Cups cups = new Cups();
                 inventory.inventoryCups.Add(cups);
             }
-            if (wallet.amountOfMoney - (costOfCups * buyCupsAmount) > 1.00)
-            {
-                inventory.inventoryCupsCount = inventory.inventoryCupsCount + buyCupsAmount;
-                wallet.amountOfMoney = wallet.amountOfMoney - (costOfCups * buyCupsAmount);
-            }
-            else
-            {
-                Console.WriteLine("Insufficient Funds");
-                Console.ReadLine();
-            }
-            Console.WriteLine("You bought {0} cups.", buyCupsAmount);
+        }
+        public Inventory GoBuyMaterials()
+        {
+            BuyLemons();
+            BuySugar();
+            BuyIce();
+            BuyCups();
+
+            return inventory;
         }
     }
 }

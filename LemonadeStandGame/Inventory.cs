@@ -8,16 +8,16 @@ namespace LemonadeStandGame
 {
     public class Inventory
     {
-        public List<Lemon> inventoryLemons;
+        public List<Lemon> inventoryLemon = new List<Lemon>();
         public int inventoryLemonCount;
 
-        public List<Sugar> inventorySugar;
+        public List<Sugar> inventorySugar = new List<Sugar>();
         public int inventorySugarCount;
 
-        public List<Ice> inventoryIce;
+        public List<Ice> inventoryIce = new List<Ice>();
         public int inventoryIceCount;
 
-        public List<Cups> inventoryCups;
+        public List<Cups> inventoryCups = new List<Cups>();
         public int inventoryCupsCount;
 
         public Inventory()
@@ -29,7 +29,7 @@ namespace LemonadeStandGame
         }
         public int GetLemonCount()
         {
-            return inventoryLemonCount = inventoryLemons.Count;
+            return inventoryLemonCount = inventoryLemon.Count;
         }
         public int GetSugarCount()
         {
@@ -42,6 +42,14 @@ namespace LemonadeStandGame
         public int GetCupsCount()
         {
             return inventoryCupsCount = inventoryCups.Count;
+        }
+        public void UpdateInventory()
+        {
+            this.inventoryLemonCount = inventoryLemon.Count - 3;
+            this.inventorySugarCount = inventorySugar.Count - 1;
+            this.inventoryIceCount = inventoryCups.Count - 3;
+            this.inventoryCupsCount = inventoryCups.Count - 8;
+
         }
         public void PrintCurrentInventory()
         {

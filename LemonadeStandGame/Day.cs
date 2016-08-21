@@ -10,7 +10,8 @@ namespace LemonadeStandGame
     {
         public int dayNumber = 1;
         Weather weather = new Weather();
-
+        public List<Customer> createCustomers;
+        
         public Day()
         {
 
@@ -18,9 +19,8 @@ namespace LemonadeStandGame
         public void PrintDayWeather()
         {
             Console.WriteLine("DAY {0} of 7.", dayNumber);
-            Console.WriteLine("\nWeather condition: {0}. \tToday's temperature is: {1} degrees.", weather.CurrentWeatherCondition(), weather.CurrentTemperature());
+            Console.WriteLine("\nWeather condition: {0}. \tToday's temperature is: {1} degrees.", weather.CurrentWeatherCondition(), weather.currentTemperature);
             Console.WriteLine("___________________________________________________________________________");
-            Console.ReadLine();
         }
     }
 }

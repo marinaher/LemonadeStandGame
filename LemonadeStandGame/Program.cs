@@ -11,7 +11,16 @@ namespace LemonadeStandGame
         public static void Main(string[] args)
         {
             Game game = new Game();
-            game.StartGame();
+            var x = game.StartGame();
+            Wallet wallet = new Wallet();
+            Customer a = new Customer();
+            a.CreateCustomer();
+            a.CustomerTransactions(wallet, x);
+            Console.ReadKey();
         }
     }
+
 }
+
+// MAKE SURE INVENTORY AND MONEY DOESNT START BACK OVER ON NEXT DAY
+// PIECE THINGS TOGETHER
