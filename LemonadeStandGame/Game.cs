@@ -8,9 +8,11 @@ namespace LemonadeStandGame
 {
     public class Game
     {
-        Player player;
+        Player player = new Player();
         Day day = new Day();
         Recipe recipe = new Recipe();
+        public int dayTemp;
+        public string dayCond;
 
         public Game()
         {
@@ -23,7 +25,7 @@ namespace LemonadeStandGame
 
             Console.WriteLine("Before we play, what is your name?");
             Console.ReadLine();
-            this.player = new Player(Console.ReadLine());
+            player.name = Console.ReadLine();
             Console.WriteLine("\nHi, It's nice to meet you {0}!", player.getName());
             Console.ReadLine();
             Console.Clear();
@@ -31,7 +33,8 @@ namespace LemonadeStandGame
         public Inventory StartGame()
         {
             day.PrintDayWeather();          //WEATHER AFFECT CUSTOMERS
-
+            dayTemp = day.degrees;
+            dayCond = day.condition;
             player.inventory.PrintCurrentInventory();
 
             Console.WriteLine("\nYour available funds are: ${0}.", player.wallet.GetAmountOfMoney());
@@ -45,8 +48,10 @@ namespace LemonadeStandGame
             Console.WriteLine("\nPress Enter to continue...");
             Console.ReadLine();
             Console.Clear();
-            
-            return player.GoBuyMaterials();
+
+            Inventory currInventory = player.GoBuyMaterials();
+
+            return currInventory;
 
             //make lemonade 
         }

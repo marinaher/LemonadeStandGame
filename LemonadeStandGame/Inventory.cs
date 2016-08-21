@@ -45,10 +45,10 @@ namespace LemonadeStandGame
         }
         public void UpdateInventory()
         {
-            this.inventoryLemonCount = inventoryLemon.Count - 3;
-            this.inventorySugarCount = inventorySugar.Count - 2;
+            this.inventoryLemonCount = inventoryLemon.Count - 1;
+            this.inventorySugarCount = inventorySugar.Count - 1;
             this.inventoryIceCount = inventoryIce.Count - 3;
-            this.inventoryCupsCount = inventoryCups.Count - 8;
+            this.inventoryCupsCount = inventoryCups.Count - 6;
 
         }
         public void PrintCurrentInventory()

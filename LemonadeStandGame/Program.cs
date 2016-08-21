@@ -13,15 +13,22 @@ namespace LemonadeStandGame
             Game game = new Game();
             Wallet wallet = new Wallet();
             Customer customer = new Customer();
+            Weather weather = new Weather();
             Day day = new Day();
+            Player player = new Player();
 
+            int dayNumber = day.dayNumber;
 
-            Inventory inventory = game.StartGame();
-            double lemonadePrice = day.StartDay();
+            while(dayNumber <= 7)
+            {
+                Inventory inventory = game.StartGame();
+                day.StartDay();
 
-            customer.CreateCustomer();
-            customer.CustomerTransactions(wallet, inventory, lemonadePrice);
+                customer.CreateCustomer(game);
+                player.CustomerTransactions(wallet, inventory);
 
+                dayNumber++;
+            }
 
 
 

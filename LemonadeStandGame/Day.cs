@@ -8,10 +8,13 @@ namespace LemonadeStandGame
 {
     public class Day
     {
-        public int dayNumber = 1;
+        
         Wallet wallet;
         Weather weather = new Weather();
-        
+        public int dayNumber = 1;
+        public double lemonadePrice;
+        public string condition = "";
+        public int degrees = 0;
 
         public Day()
         {
@@ -19,18 +22,20 @@ namespace LemonadeStandGame
         }
         public void PrintDayWeather()
         {
+            condition = weather.CurrentWeatherCondition();
+            degrees = weather.currentTemperature;
+            Console.Clear();
             Console.WriteLine("DAY {0} of 7.", dayNumber);
-            Console.WriteLine("\nWeather condition: {0}. \tToday's temperature is: {1} degrees.", weather.CurrentWeatherCondition(), weather.currentTemperature);
+            Console.WriteLine("\nWeather condition: {0}. \tToday's temperature is: {1} degrees.", condition, degrees);
             Console.WriteLine("___________________________________________________________________________");
+            dayNumber++;
         }
-        public double StartDay()
+        public void StartDay()
         {
             Console.WriteLine("It's time to sell some Lemonade!");
             Console.WriteLine("\nHow much would you like to charge per cup of Lemonade?");
-            double lemonadePrice = double.Parse(Console.ReadLine());
+            lemonadePrice = double.Parse(Console.ReadLine());
             Console.WriteLine("Got it. Each cup of Lemonade cost ${0}.", lemonadePrice);
-
-            return lemonadePrice;
 
             //once lemonade price is set, customers start coming to buy or not
 

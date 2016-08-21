@@ -11,8 +11,10 @@ namespace LemonadeStandGame
         public string name;
         public Inventory inventory = new Inventory();
         public Wallet wallet = new Wallet();
+        Customer customer = new Customer();
+        Day day = new Day();
 
-        public Player(string name)
+        public Player()
         {
             this.name = name;
         }
@@ -28,11 +30,11 @@ namespace LemonadeStandGame
         public void BuyLemons()                 //what if player enters in string instead of int ??? it doesn't break. it tells player that they bought 0 items.
         {
             int buyLemonAmount;
-            double costOfLemon = 0.60;
+            double costOfLemon = 0.10;
             Console.WriteLine("How many Lemons would you like to buy?");
             string lemonAmountInput = Console.ReadLine();
             int.TryParse(lemonAmountInput, out buyLemonAmount);
-            if (wallet.amountOfMoney - (costOfLemon * buyLemonAmount) > 0.60)
+            if (wallet.amountOfMoney - (costOfLemon * buyLemonAmount) > costOfLemon)
             {
                 inventory.inventoryLemonCount += buyLemonAmount;
                 wallet.amountOfMoney = (wallet.amountOfMoney - (costOfLemon * buyLemonAmount));
@@ -53,11 +55,11 @@ namespace LemonadeStandGame
         public void BuySugar()
         {
             int buySugarAmount;
-            double costOfSugar = 0.40;
+            double costOfSugar = 0.10;
             Console.WriteLine("\nHow many cups of sugar would you like to buy?");
             string sugarAmountInput = Console.ReadLine();
             int.TryParse(sugarAmountInput, out buySugarAmount);
-            if (wallet.amountOfMoney - (costOfSugar * buySugarAmount) > 0.80)
+            if (wallet.amountOfMoney - (costOfSugar * buySugarAmount) > costOfSugar)
             {
                 inventory.inventorySugarCount += buySugarAmount;
                 wallet.amountOfMoney = wallet.amountOfMoney - (costOfSugar * buySugarAmount);
@@ -78,11 +80,11 @@ namespace LemonadeStandGame
         public void BuyIce()
         {
             int buyIceAmount;
-            double costOfIce = 0.40;
+            double costOfIce = 0.10;
             Console.WriteLine("\nHow many cups of ice would you like to buy?");
             string iceAmountInput = Console.ReadLine();
             int.TryParse(iceAmountInput, out buyIceAmount);
-            if (wallet.amountOfMoney - (costOfIce * buyIceAmount) > 0.40)
+            if (wallet.amountOfMoney - (costOfIce * buyIceAmount) > costOfIce)
             {
                 inventory.inventoryIceCount += buyIceAmount;
                 wallet.amountOfMoney = wallet.amountOfMoney - (costOfIce * buyIceAmount);
@@ -102,12 +104,12 @@ namespace LemonadeStandGame
         }
         public void BuyCups()
         {
-            double costOfCups = 0.80;
+            double costOfCups = 0.10;
             int buyCupsAmount;
             Console.WriteLine("\nHow many cups would you like to buy?");
             string cupsAmountInput = Console.ReadLine();
             int.TryParse(cupsAmountInput, out buyCupsAmount);
-            if (wallet.amountOfMoney - (costOfCups * buyCupsAmount) > 1.00)
+            if (wallet.amountOfMoney - (costOfCups * buyCupsAmount) > costOfCups)
             {
                 inventory.inventoryCupsCount += buyCupsAmount;
                 wallet.amountOfMoney = wallet.amountOfMoney - (costOfCups * buyCupsAmount);
@@ -131,8 +133,58 @@ namespace LemonadeStandGame
             BuySugar();
             BuyIce();
             BuyCups();
+            Console.Clear();
 
             return inventory;
         }
+        public void CustomerTransactions(Wallet wallet, Inventory inventory)
+        {
+            int customerCapabilityToBuy = 0;
+            double Price = day.lemonadePrice;
+
+            foreach (Customer customer in customer.CustomerList)
+            {
+                if (customer.customerCash >= Price && customer.thirst > 1)
+                {
+                    customerCapabilityToBuy++;
+                }
+            }
+
+            if (customerCapabilityToBuy == 0)
+            {
+                // Day ends. 
+            }
+            else if (customerCapabilityToBuy != 0)
+            {
+                if (inventory.inventoryLemonCount >= 1 && inventory.inventorySugarCount >= 1 && inventory.inventoryIceCount >= 3 && inventory.inventoryCupsCount >= 6)
+                {
+                    inventory.UpdateInventory();
+                    while (customerCapabilityToBuy >= customer.pitcher)
+                    {
+                        wallet.amountOfMoney += (Price * customer.pitcher);
+                        customerCapabilityToBuy -= customer.pitcher;
+                        inventory.UpdateInventory();
+                    }
+                    wallet.amountOfMoney += (Price * customerCapabilityToBuy);
+                }
+                else
+                {
+                    Console.WriteLine("Not enough Materials to make Lemonade.");
+                    Console.ReadLine();
+
+                    BuyLemons();
+                    BuySugar();
+                    BuyIce();
+                    BuyCups();
+
+                }
+            }
+
+            //not enough materials
+            //go back to buy more materials
+
+            //day.StartDay();
+        }
+
     }
 }
