@@ -13,6 +13,11 @@ namespace LemonadeStandGame
         public Wallet wallet = new Wallet();
         Customer customer = new Customer();
         Day day = new Day();
+        public double newValue;
+
+
+        double costOfCups = 0.10;
+        int buyCupsAmount;
 
         public Player()
         {
@@ -104,15 +109,16 @@ namespace LemonadeStandGame
         }
         public void BuyCups()
         {
-            double costOfCups = 0.10;
-            int buyCupsAmount;
+            //double costOfCups = 0.10;
+            //int buyCupsAmount;
             Console.WriteLine("\nHow many cups would you like to buy?");
             string cupsAmountInput = Console.ReadLine();
             int.TryParse(cupsAmountInput, out buyCupsAmount);
+
             if (wallet.amountOfMoney - (costOfCups * buyCupsAmount) > costOfCups)
             {
                 inventory.inventoryCupsCount += buyCupsAmount;
-                wallet.amountOfMoney = wallet.amountOfMoney - (costOfCups * buyCupsAmount);
+                //wallet.amountOfMoney = wallet.amountOfMoney - (costOfCups * buyCupsAmount);
                 Console.WriteLine("You bought {0} cups.", buyCupsAmount);
             }
             else if(wallet.amountOfMoney < (costOfCups * buyCupsAmount))
@@ -127,6 +133,7 @@ namespace LemonadeStandGame
                 inventory.inventoryCups.Add(cups);
             }
         }
+
         public Inventory GoBuyMaterials()
         {
             BuyLemons();
@@ -134,15 +141,24 @@ namespace LemonadeStandGame
             BuyIce();
             BuyCups();
             Console.Clear();
-
+           
             return inventory;
         }
-        public void CustomerTransactions(Wallet wallet, Inventory inventory)
+
+        public double UpdateWallet()
+        {
+            //double amountOfMoney;
+            return newValue = wallet.amountOfMoney - (costOfCups * buyCupsAmount);
+            
+        }
+
+        public double CustomerTransactions(double wallet, Inventory inventory, List<Customer>CustomerList, double lemPrice)
         {
             int customerCapabilityToBuy = 0;
-            double Price = day.lemonadePrice;
+            double Price = lemPrice;
+            double newTotal;
 
-            foreach (Customer customer in customer.CustomerList)
+            foreach (Customer customer in CustomerList)
             {
                 if (customer.customerCash >= Price && customer.thirst > 1)
                 {
@@ -161,11 +177,28 @@ namespace LemonadeStandGame
                     inventory.UpdateInventory();
                     while (customerCapabilityToBuy >= customer.pitcher)
                     {
-                        wallet.amountOfMoney += (Price * customer.pitcher);
+                        wallet += (Price * customer.pitcher);
                         customerCapabilityToBuy -= customer.pitcher;
-                        inventory.UpdateInventory();
+                        for (int i = 0; i < customer.pitcher; i++)
+                        {
+                            CustomerList.RemoveAt(0);
+                        }
+                        if(inventory.inventoryLemonCount >= 1 && inventory.inventorySugarCount >= 1 && inventory.inventoryIceCount >= 3 && inventory.inventoryCupsCount >= 6)
+                        {
+                            inventory.UpdateInventory();
+                        }
+                        else
+                        {
+                            customerCapabilityToBuy = 0;
+                        }
                     }
-                    wallet.amountOfMoney += (Price * customerCapabilityToBuy);
+                    wallet += (Price * customerCapabilityToBuy);
+                    for (int i = 0; i < customerCapabilityToBuy; i++)
+                    {
+                        CustomerList.RemoveAt(0);
+                    }
+                    Console.WriteLine("Total amount in your wallet at the end of today is ${0}.", wallet);
+                    Console.ReadLine();
                 }
                 else
                 {
@@ -179,12 +212,15 @@ namespace LemonadeStandGame
 
                 }
             }
+            newTotal = wallet;
+            return newTotal;
 
             //not enough materials
             //go back to buy more materials
 
             //day.StartDay();
         }
+
 
     }
 }

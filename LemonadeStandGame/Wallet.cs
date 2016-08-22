@@ -8,12 +8,16 @@ namespace LemonadeStandGame
 {
     public class Wallet
     {
-        public double amountOfMoney;
-        public double funds;
+        //public double amountOfMoney;
+        //public double funds;
 
+        //public Wallet()
+        //{
+        //    this.amountOfMoney = 30;
+        //}
+        public double amountOfMoney = 30;
         public Wallet()
         {
-            this.amountOfMoney = 30;
         }
         public double GetAmountOfMoney()
         {

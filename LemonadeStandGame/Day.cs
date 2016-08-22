@@ -9,7 +9,7 @@ namespace LemonadeStandGame
     public class Day
     {
         
-        Wallet wallet;
+        //Wallet wallet;
         Weather weather = new Weather();
         public int dayNumber = 1;
         public double lemonadePrice;
@@ -30,11 +30,20 @@ namespace LemonadeStandGame
             Console.WriteLine("___________________________________________________________________________");
             dayNumber++;
         }
-        public void StartDay()
+        public double StartDay()
         {
             Console.WriteLine("It's time to sell some Lemonade!");
             Console.WriteLine("\nHow much would you like to charge per cup of Lemonade?");
-            lemonadePrice = double.Parse(Console.ReadLine());
+            string input = Console.ReadLine();
+            if (input != null)
+            {
+                lemonadePrice = double.Parse(input);
+            }
+            else
+            {
+                StartDay();
+            }
+            
             Console.WriteLine("Got it. Each cup of Lemonade cost ${0}.", lemonadePrice);
 
             //once lemonade price is set, customers start coming to buy or not
@@ -46,6 +55,7 @@ namespace LemonadeStandGame
             //at end of 7 days, show total profit amt
 
             //end game
+            return lemonadePrice;
         }
     }
 }

@@ -11,6 +11,8 @@ namespace LemonadeStandGame
         Player player = new Player();
         Day day = new Day();
         Recipe recipe = new Recipe();
+        //Wallet wallet = new Wallet();
+        Inventory currInventory = new Inventory();
         public int dayTemp;
         public string dayCond;
 
@@ -32,12 +34,12 @@ namespace LemonadeStandGame
         }
         public Inventory StartGame()
         {
-            day.PrintDayWeather();          //WEATHER AFFECT CUSTOMERS
+            day.PrintDayWeather();
             dayTemp = day.degrees;
             dayCond = day.condition;
             player.inventory.PrintCurrentInventory();
 
-            Console.WriteLine("\nYour available funds are: ${0}.", player.wallet.GetAmountOfMoney());
+            //Console.WriteLine("\nYour available funds are: ${0}.", wallet.GetAmountOfMoney());
             Console.WriteLine("\nPress Enter to continue...");
             Console.ReadLine();
             Console.Clear();
@@ -49,11 +51,10 @@ namespace LemonadeStandGame
             Console.ReadLine();
             Console.Clear();
 
-            Inventory currInventory = player.GoBuyMaterials();
+            currInventory = player.GoBuyMaterials();
 
             return currInventory;
 
-            //make lemonade 
         }
     }
 }

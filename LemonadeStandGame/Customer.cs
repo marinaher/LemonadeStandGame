@@ -53,52 +53,5 @@ namespace LemonadeStandGame
             cash = random.Next(1, 15);
             return cash * .10;
         }
-        //public void CustomerTransactions(Wallet wallet, Inventory inventory)
-        //{
-        //    int customerCapabilityToBuy = 0;
-        //    double Price = day.lemonadePrice;
-
-        //    foreach (Customer customer in CustomerList)
-        //    {
-        //        if (customer.customerCash >= Price && customer.thirst > 1)
-        //        {
-        //            customerCapabilityToBuy++;
-        //        }
-        //    }
-
-        //    if (customerCapabilityToBuy == 0)
-        //    {
-        //        // Day ends. 
-        //    }else if (customerCapabilityToBuy != 0)
-        //    {
-        //        if(inventory.inventoryLemonCount >= 1 && inventory.inventorySugarCount >= 1 && inventory.inventoryIceCount >= 3 && inventory.inventoryCupsCount >= 6)
-        //        {
-        //            inventory.UpdateInventory();
-        //            while (customerCapabilityToBuy >= pitcher)
-        //            {
-        //                wallet.amountOfMoney += (Price * pitcher);
-        //                customerCapabilityToBuy -= pitcher;
-        //                inventory.UpdateInventory();
-        //            }
-        //            wallet.amountOfMoney += (Price * customerCapabilityToBuy);
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine("Not enough Materials to make Lemonade.");
-        //            Console.ReadLine();
-
-        //            player.BuyLemons();
-        //            player.BuySugar();
-        //            player.BuyIce();
-        //            player.BuyCups();
-
-        //        }
-        //    }
-
-        //    //not enough materials
-        //    //go back to buy more materials
-
-        //    //day.StartDay();
-        //}
     }
 }

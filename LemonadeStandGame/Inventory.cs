@@ -20,6 +20,11 @@ namespace LemonadeStandGame
         public List<Cups> inventoryCups = new List<Cups>();
         public int inventoryCupsCount;
 
+        int cupsInPitcher = 6;
+        int iceInPitcher = 3;
+        int lemonsInPitcher = 1;
+        int sugarInPitcher = 1;
+
         public Inventory()
         {
             this.inventoryLemonCount = 0;
@@ -45,11 +50,31 @@ namespace LemonadeStandGame
         }
         public void UpdateInventory()
         {
-            this.inventoryLemonCount = inventoryLemon.Count - 1;
-            this.inventorySugarCount = inventorySugar.Count - 1;
-            this.inventoryIceCount = inventoryIce.Count - 3;
-            this.inventoryCupsCount = inventoryCups.Count - 6;
+            inventoryLemonCount -= 1;
+            inventorySugarCount -= 1;
+            inventoryIceCount -= 3;
+            inventoryCupsCount -= 6;
+            RemoveItemsFromList();
 
+        }
+        public void RemoveItemsFromList()
+        {
+            for (int i = 0; i < lemonsInPitcher; i++)
+            {
+                inventoryLemon.RemoveAt(0);
+            }
+            for (int i = 0; i < sugarInPitcher; i++)
+            {
+                inventorySugar.RemoveAt(0);
+            }
+            for (int i = 0; i < iceInPitcher; i++)
+            {
+                inventoryIce.RemoveAt(0);
+            }
+            for (int i = 0; i < cupsInPitcher; i++)
+            {
+                inventoryCups.RemoveAt(0);
+            }
         }
         public void PrintCurrentInventory()
         {

@@ -11,21 +11,26 @@ namespace LemonadeStandGame
         public static void Main(string[] args)
         {
             Game game = new Game();
-            Wallet wallet = new Wallet();
+            
             Customer customer = new Customer();
             Weather weather = new Weather();
             Day day = new Day();
             Player player = new Player();
-
+            double userLemPrice;
             int dayNumber = day.dayNumber;
 
             while(dayNumber <= 7)
             {
+                double wallet = player.UpdateWallet();
                 Inventory inventory = game.StartGame();
-                day.StartDay();
+
+
+                userLemPrice = day.StartDay();
 
                 customer.CreateCustomer(game);
-                player.CustomerTransactions(wallet, inventory);
+
+                double funds = player.CustomerTransactions(wallet, inventory, customer.CustomerList, userLemPrice);
+                Console.WriteLine("GARRA + {0}", funds);
 
                 dayNumber++;
             }
