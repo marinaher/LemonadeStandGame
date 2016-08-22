@@ -14,14 +14,13 @@ namespace LemonadeStandGame
         Day day = new Day();
 
         public string name;
-        public double newValueLemons;
-        public double newValueCups;
+        public double newValue;
         public double funds;
 
-        double costOfLemon = 0.20;
-        double costOfSugar = 0.15;
-        double costOfIce = 0.10;
-        double costOfCups = 0.50;
+        public double costOfLemon = 0.20;
+        public double costOfSugar = 0.15;
+        public double costOfIce = 0.10;
+        public double costOfCups = 0.50;
 
         public int buyLemonAmount;
         public int buySugarAmount;
@@ -40,6 +39,14 @@ namespace LemonadeStandGame
         public void setName(string name)
         {
             this.name = name;
+        }
+
+        public void PlayerUpdateWallet()
+        {
+            Console.WriteLine("\nYour available funds are: ${0}.", wallet.UpdateWalletAmount());
+            Console.WriteLine("\nPress Enter to continue...");
+            Console.ReadLine();
+            Console.Clear();
         }
         public void BuyLemons()
         {
@@ -151,8 +158,7 @@ namespace LemonadeStandGame
 
         public double UpdateWallet()
         {
-            newValueLemons = wallet.amountOfMoney - (costOfLemon - buyLemonAmount);
-            return newValueCups = wallet.amountOfMoney - (costOfCups * buyCupsAmount);
+            return newValue = wallet.amountOfMoney - (costOfCups * buyCupsAmount);
         }
 
         public double CustomerTransactions(double wallet, Inventory inventory, List<Customer>CustomerList, double lemPrice)
@@ -201,7 +207,7 @@ namespace LemonadeStandGame
                     {
                         CustomerList.RemoveAt(0);
                     }
-                    Console.WriteLine("Total amount in your wallet at the end of today is ${0}.", wallet);
+                    Console.WriteLine("Total amount in your wallet at the end of today is ${0}.", funds);
                     Console.ReadLine();
                 }
                 else

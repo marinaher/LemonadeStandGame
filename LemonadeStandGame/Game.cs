@@ -39,10 +39,7 @@ namespace LemonadeStandGame
             dayCond = day.condition;
             player.inventory.PrintCurrentInventory();
 
-            Console.WriteLine("\nYour available funds are: ${0}.", player.UpdateWallet()); /*wallet.GetAmountOfMoney()*//*);*/
-            Console.WriteLine("\nPress Enter to continue...");
-            Console.ReadLine();
-            Console.Clear();
+            player.PlayerUpdateWallet();
 
             recipe.RecipeInfo();
 

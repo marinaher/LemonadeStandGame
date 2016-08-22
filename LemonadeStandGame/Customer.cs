@@ -10,7 +10,6 @@ namespace LemonadeStandGame
     public class Customer
     {
         public List<Customer> CustomerList = new List<Customer>();
-        Player player;
         Day day = new Day();
         Weather weather = new Weather();
         public int thirst;

@@ -14,5 +14,6 @@ namespace LemonadeStandGame
         {
             this.sugarPrice = 0.15;
         }
+        
     }
 }

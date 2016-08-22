@@ -8,8 +8,6 @@ namespace LemonadeStandGame
 {
     public class Day
     {
-        
-        //Wallet wallet;
         Weather weather = new Weather();
         public int dayNumber = 1;
         public double lemonadePrice;
@@ -28,6 +26,7 @@ namespace LemonadeStandGame
             Console.WriteLine("DAY {0} of 7.", dayNumber);
             Console.WriteLine("\nWeather condition: {0}. \tToday's temperature is: {1} degrees.", condition, degrees);
             Console.WriteLine("___________________________________________________________________________");
+
             dayNumber++;
         }
         public double StartDay()

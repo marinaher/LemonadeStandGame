@@ -30,7 +30,7 @@ namespace LemonadeStandGame
                 customer.CreateCustomer(game);
 
                 double funds = player.CustomerTransactions(wallet, inventory, customer.CustomerList, userLemPrice);
-                Console.WriteLine("You're total for today is: ${0}", player.funds);
+                Console.WriteLine("You're total for today is: ${0}.", player.funds);
 
                 dayNumber++;
             }

@@ -8,6 +8,8 @@ namespace LemonadeStandGame
 {
     public class Inventory
     {
+        Player player;
+
         public List<Lemon> inventoryLemon = new List<Lemon>();
         public int inventoryLemonCount;
 
@@ -20,10 +22,10 @@ namespace LemonadeStandGame
         public List<Cups> inventoryCups = new List<Cups>();
         public int inventoryCupsCount;
 
-        int cupsInPitcher = 6;
-        int iceInPitcher = 3;
         int lemonsInPitcher = 1;
         int sugarInPitcher = 1;
+        int iceInPitcher = 3;
+        int cupsInPitcher = 6;
 
         public Inventory()
         {
@@ -80,6 +82,8 @@ namespace LemonadeStandGame
         {
             Console.WriteLine("This is your current inventory: ");
             Console.WriteLine("\nLemons:\t{0} \tSugar:\t{1} \nIce: \t{2} \tCups: \t{3}", inventoryLemonCount, inventorySugarCount, inventoryIceCount, inventoryCupsCount);
+
+            
         }
     }
 }

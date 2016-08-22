@@ -9,11 +9,11 @@ namespace LemonadeStandGame
     public class Ice
     {
         public double icePrice;
-        public int quality;
 
         public Ice()
         {
             this.icePrice = 0.10;
         }
+        
     }
 }
