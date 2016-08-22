@@ -14,7 +14,7 @@ namespace LemonadeStandGame
         Customer customer = new Customer();
         Day day = new Day();
         public double newValue;
-
+        public double funds;
 
         double costOfCups = 0.10;
         int buyCupsAmount;
@@ -177,7 +177,9 @@ namespace LemonadeStandGame
                     inventory.UpdateInventory();
                     while (customerCapabilityToBuy >= customer.pitcher)
                     {
-                        wallet += (Price * customer.pitcher);
+                        wallet = wallet + (Price * customer.pitcher);
+                        //wallet += (Price * customer.pitcher);
+                        funds = funds + wallet;
                         customerCapabilityToBuy -= customer.pitcher;
                         for (int i = 0; i < customer.pitcher; i++)
                         {
