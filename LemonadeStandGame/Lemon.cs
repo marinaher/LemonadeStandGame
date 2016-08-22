@@ -14,7 +14,7 @@ namespace LemonadeStandGame
         public Lemon()
         {
             numberOfLemons = 0;
-            lemonPrice = 0.10;
+            lemonPrice = 0.20;
         }
     }
 }

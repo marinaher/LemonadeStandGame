@@ -46,15 +46,6 @@ namespace LemonadeStandGame
             
             Console.WriteLine("Got it. Each cup of Lemonade cost ${0}.", lemonadePrice);
 
-            //once lemonade price is set, customers start coming to buy or not
-
-            //if no more lemonade, need to stop deducting and stop game because sold out
-
-            //start next day
-
-            //at end of 7 days, show total profit amt
-
-            //end game
             return lemonadePrice;
         }
     }

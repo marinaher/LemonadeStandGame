@@ -12,7 +12,7 @@ namespace LemonadeStandGame
 
         public Cups()
         {
-            cupsPrice = 0.10;
+            cupsPrice = 0.50;
         }
     }
 }

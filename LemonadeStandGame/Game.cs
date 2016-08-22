@@ -11,8 +11,8 @@ namespace LemonadeStandGame
         Player player = new Player();
         Day day = new Day();
         Recipe recipe = new Recipe();
-        //Wallet wallet = new Wallet();
         Inventory currInventory = new Inventory();
+        Wallet wallet;
         public int dayTemp;
         public string dayCond;
 
@@ -39,7 +39,7 @@ namespace LemonadeStandGame
             dayCond = day.condition;
             player.inventory.PrintCurrentInventory();
 
-            //Console.WriteLine("\nYour available funds are: ${0}.", wallet.GetAmountOfMoney());
+            Console.WriteLine("\nYour available funds are: ${0}.", player.UpdateWallet()); /*wallet.GetAmountOfMoney()*//*);*/
             Console.WriteLine("\nPress Enter to continue...");
             Console.ReadLine();
             Console.Clear();

@@ -27,7 +27,7 @@ namespace LemonadeStandGame
         }
         public List<Customer> CreateCustomer(Game game)
         {
-            people = game.dayTemp * 0.60;
+            people = game.dayTemp * 0.50;
 
             for (int i = 0; i < people; i++)
             {
