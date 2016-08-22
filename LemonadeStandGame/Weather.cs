@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace LemonadeStandGame
 {
-    public class Weather                        //temperature degrees do not match weather conditions!!!!
+    public class Weather
     {
-       
-
         public int currentTemperature;
         public int currentWeatherCondition;
         public string weatherCondition;
