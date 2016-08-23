@@ -34,22 +34,22 @@ namespace LemonadeStandGame
             return this.amountOfMoney;
         }
         
-        public double LemonWalletUpdate()
-        {
-            return newValueLemons = amountOfMoney - (player.costOfLemon * buyLemonAmount);
-        }
-        public double SugarWalletUpdate()
-        {
-            return newValueSugar = amountOfMoney - (player.costOfSugar * buySugarAmount);
-        }
-        public double IceWalletUpdate()
-        {
-            return newValueIce = amountOfMoney - (player.costOfIce * buyIcemount);
-        }
-        public double CupWalletUpdate()
-        {
-            return newValueCups = amountOfMoney - (player.costOfCups * buyCupsAmount);
-        }
+        //public double LemonWalletUpdate()
+        //{
+        //    return newValueLemons = amountOfMoney - (player.costOfLemon * buyLemonAmount);
+        //}
+        //public double SugarWalletUpdate()
+        //{
+        //    return newValueSugar = amountOfMoney - (player.costOfSugar * buySugarAmount);
+        //}
+        //public double IceWalletUpdate()
+        //{
+        //    return newValueIce = amountOfMoney - (player.costOfIce * buyIcemount);
+        //}
+        //public double CupWalletUpdate()
+        //{
+        //    return newValueCups = amountOfMoney - (player.costOfCups * buyCupsAmount);
+        //}
         public double UpdateWalletAmount()
         {
             return amountOfMoney - (newValueLemons + newValueSugar + newValueIce + newValueCups);
