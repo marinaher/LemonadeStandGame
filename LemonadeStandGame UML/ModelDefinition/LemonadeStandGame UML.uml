@@ -544,24 +544,6 @@
             </type_NamedElement>
           </property>
           <property
-            Id="360a030d-18aa-46c2-9f93-fa8f13f426df"
-            name="day"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="e6d5874f-d7a5-4fa1-9563-10937e78e4c9"
-                LastKnownName="Day"
-                LastKnownLocation="LemonadeStandGame UML.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="4f737ffc-f2ed-44bc-a862-66795004c111"
             name="recipe"
             isLeaf="false"
@@ -821,60 +803,6 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property
-            Id="1baa52b1-4068-4693-9e29-81d596d0f4b2"
-            name="inventory"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="e2441686-4a7e-45dd-bf8e-98282a127f27"
-                LastKnownName="Inventory"
-                LastKnownLocation="LemonadeStandGame UML.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="b26aa71f-c9c5-424d-9cdd-892d4b575117"
-            name="wallet"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="33f3046f-df7d-4a4e-9fe5-431bed2aaccb"
-                LastKnownName="Wallet"
-                LastKnownLocation="LemonadeStandGame UML.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="a0a51e0b-788b-4762-b4a6-fa691377fce6"
-            name="day"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="e6d5874f-d7a5-4fa1-9563-10937e78e4c9"
-                LastKnownName="Day"
-                LastKnownLocation="LemonadeStandGame UML.uml" />
-            </type_NamedElement>
-          </property>
           <property
             Id="62619f39-626b-4074-b2c0-34b2f9471fc9"
             name="name"
@@ -1363,24 +1291,6 @@
         </targetEnds>
         <ownedAttributesInternal>
           <property
-            Id="47a8e9b7-7fd9-45d6-92e6-a3a2d69fe777"
-            name="player"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="8b63c1d6-fb10-456d-ae9f-a020900c6f0f"
-                LastKnownName="Player"
-                LastKnownLocation="LemonadeStandGame UML.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="d16ee9c8-8b65-4269-90e8-f423f176db31"
             name="List&lt;Lemon&gt;"
             isLeaf="false"
@@ -1816,24 +1726,6 @@
         </targetEnds>
         <ownedAttributesInternal>
           <property
-            Id="f92817c2-d6d0-42f7-a3d2-9e167c33dc7a"
-            name="weather"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="5c0e4d59-fe37-49ad-a2dc-607c86883103"
-                LastKnownName="Weather"
-                LastKnownLocation="LemonadeStandGame UML.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="a66ea7eb-235d-45c8-acd4-c6d1a0ac3a93"
             name="dayNumber"
             isLeaf="false"
@@ -1972,7 +1864,7 @@
           </property>
           <property
             Id="70a1f19a-694e-4472-89db-1351282a72c0"
-            name="putcher"
+            name="pitcher"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -2007,16 +1899,6 @@
             </type_NamedElement>
           </property>
           <property
-            Id="bebf7b31-a83a-4cb8-8b7a-b0a73bc1cfbf"
-            name="Attribute1"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-          <property
             Id="0462aa9e-ff96-4247-b904-bc12df711ce3"
             name="random"
             isLeaf="false"
@@ -2048,24 +1930,8 @@
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="a7c71768-0683-4d85-921e-ef7d2cad9002"
-            name="thirst = 0"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
             Id="f3ea34e6-87e4-4c18-ab2f-d27dbcdc086f"
             name="customerCash = 0"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="8bc42bf3-cdee-4fee-819c-de93c66229c6"
-            name="pitcher = 6"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"

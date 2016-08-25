@@ -4,3 +4,5 @@ C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeS
 C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandGame\obj\Debug\LemonadeStandGame.exe
 C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandGame\obj\Debug\LemonadeStandGame.pdb
 C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandGame\obj\Debug\LemonadeStandGame.csprojResolveAssemblyReference.cache
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandGame\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandGame\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml

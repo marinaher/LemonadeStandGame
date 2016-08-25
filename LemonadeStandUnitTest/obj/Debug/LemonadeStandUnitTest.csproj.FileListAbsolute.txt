@@ -1,0 +1,9 @@
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandUnitTest\bin\Debug\LemonadeStandUnitTest.dll
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandUnitTest\bin\Debug\LemonadeStandUnitTest.pdb
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandUnitTest\bin\Debug\LemonadeStandGame.exe
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandUnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandUnitTest\bin\Debug\LemonadeStandGame.pdb
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandUnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandUnitTest\obj\Debug\LemonadeStandUnitTest.csprojResolveAssemblyReference.cache
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandUnitTest\obj\Debug\LemonadeStandUnitTest.dll
+C:\Users\reald\Documents\GitHub\devCodeCamp Projects\LemonadeStandGame\LemonadeStandUnitTest\obj\Debug\LemonadeStandUnitTest.pdb

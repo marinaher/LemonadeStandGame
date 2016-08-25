@@ -14,15 +14,16 @@ namespace LemonadeStandGame
         Weather weather = new Weather();
         public int thirst;
         public double customerCash;
-        public int pitcher = 6;
+        public int pitcher;
         public double people;
 
         Random random = new Random();
 
         public Customer()
         {
-            this.thirst = 0;
-            this.customerCash = 0;
+            thirst = 0;
+            customerCash = 0;
+            pitcher = 6;
         }
         public List<Customer> CreateCustomer(Game game)
         {
